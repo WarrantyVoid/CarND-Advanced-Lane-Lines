@@ -199,11 +199,11 @@ if __name__ == '__main__':
 
 
     # Pipeline for single picture
-    rgb = mpimg.imread('test_images/test6.jpg')
-    processor = ImageProcessor(cam_calibration, rgb.shape, 0.375)
+    rgb = mpimg.imread('test_images/harder_challenge.jpg')
+    processor = ImageProcessor(cam_calibration, rgb.shape, 0.35)
     rgb = processor.pipeline(rgb)
     plt.imshow(rgb)
-    mpimg.imsave('output_images/test6.jpg', rgb)
+    mpimg.imsave('output_images/harder_challenge.jpg', rgb, format='jpg')
     plt.show()
 
     '''
