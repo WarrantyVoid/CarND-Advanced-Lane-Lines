@@ -39,7 +39,7 @@ You're reading it!
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained in the module `calibration.py`.  
+The code for this step is contained in the module `calibration.py`.
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `obj_corners` is just a replicated array of coordinates, and `obj_points` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `img_points` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
@@ -110,7 +110,7 @@ At last, for detecting the white lines, I used another AND operation on the thre
 
 The detection of lane pixels can be found in the file `udacity.py`. Here I assembled all of the example code from the project description into according methods. The function names are `find_lane_points()` for the initial search and `find_lane_points_inc()` for the incremental search of lane points. I did not change much of the code, as I am not proficient with Python and the scope of this project was only 2 weeks. However, I fixed one bug in the routine:
 
-The sample code from "33. Finding Lanes, Sliding Window" which was supposed to find the starting points of the sliding window based on the histogram over the lower half of the image. Instead, however, it was using the **upper** half of the image leading to terrible results for strong curves. I've changed it so, that it now uses the lower 3rd.
+The sample code from "33. Finding Lanes, Sliding Window" finds the starting points of the sliding window based on the histogram over the lower half of the image. Instead, however, I've changed it so, that it only uses the lower 3rd.
 
 Another small thing that I've tweaked is, that the window keeps sliding by the latest horizontal delta in case no pixels have been detected at all. This decreases the error for the polynomial match.
 

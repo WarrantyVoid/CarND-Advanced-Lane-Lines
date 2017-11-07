@@ -15,7 +15,7 @@ Y_METER_PER_PIXEL = 30 / 720
 # Udacity code: Finds lane points using search window
 def find_lane_points(img, nwindows=10, margin=120, minpix=25):
     # Take a histogram of the bottom third of the image
-    histogram = np.sum(img[-img.shape[0] // 3:, :], axis=0)
+    histogram = np.sum(img[(img.shape[0] * 2) // 3:, :], axis=0)
 
     # Find the peak of the left and right halves of the histogram
     # These will be the starting point for the left and right lines
